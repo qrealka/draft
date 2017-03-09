@@ -4127,7 +4127,9 @@ template <class T, class... Args> constexpr explicit variant(in_place_type_t<T>,
 \begin{itemdescr}
 \pnum
 \effects
-Initializes the contained value of type \tcode{T} with the arguments \tcode{std::forward<Args>(args)...}.
+Initializes the contained value as if direct-non-list-initializing
+an object of type \tcode{T}
+with the arguments \tcode{std::forward<Args>(args)...}.
 
 \pnum
 \postconditions
@@ -4155,7 +4157,8 @@ template <class T, class U, class... Args>
 \begin{itemdescr}
 \pnum
 \effects
-Initializes the contained value as if constructing an object of type \tcode{T}
+Initializes the contained value as if direct-non-list-initializing
+an object of type \tcode{T}
 with the arguments \tcode{il, std::forward<Args>(args)...}.
 
 \pnum
@@ -4183,7 +4186,8 @@ template <size_t I, class... Args> constexpr explicit variant(in_place_index_t<I
 \begin{itemdescr}
 \pnum
 \effects
-Initializes the contained value as if constructing an object of type $\tcode{T}_I$
+Initializes the contained value as if direct-non-list-initializing
+an object of type $\tcode{T}_I$
 with the arguments \tcode{std::forward<Args>(args)...}.
 
 \pnum
@@ -4211,8 +4215,9 @@ template <size_t I, class U, class... Args>
 \begin{itemdescr}
 \pnum
 \effects
-Initializes the contained value as if constructing an object of type
-$\tcode{T}_I$ with the arguments \tcode{il, std::forward<Args>(args)...}.
+Initializes the contained value as if direct-non-list-initializing
+an object of type $\tcode{T}_I$
+with the arguments \tcode{il, std::forward<Args>(args)...}.
 
 \pnum
 \postconditions
@@ -4495,9 +4500,10 @@ template <size_t I, class... Args>
 \pnum
 \effects
 Destroys the currently contained value if \tcode{valueless_by_exception()}
-is \tcode{false}. Then direct-initializes the contained value as if
-constructing a value of type $\tcode{T}_I$ with the arguments
-\tcode{std::forward<Ar\-gs>(args)...}.
+is \tcode{false}.
+Then initializes the contained value as if direct-non-list-initializing
+a value of type $\tcode{T}_I$
+with the arguments \tcode{std::forward<Ar\-gs>(args)...}.
 
 \pnum
 \postconditions
@@ -4533,9 +4539,10 @@ template <size_t I, class U, class... Args>
 \pnum
 \effects
 Destroys the currently contained value if \tcode{valueless_by_exception()}
-is \tcode{false}. Then direct-initializes the contained value as if
-constructing a value of type $\tcode{T}_I$ with the arguments
-\tcode{il, std::forward<Args>(args)...}.
+is \tcode{false}.
+Then initializes the contained value as if direct-non-list-initializing
+a value of type $\tcode{T}_I$
+with the arguments \tcode{il, std::forward<Args>(args)...}.
 
 \pnum
 \postconditions
