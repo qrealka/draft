@@ -1697,7 +1697,7 @@ template <class T> struct A {
   A(T, T, int);     // \#3
   template<class U>
     A(int, T, U);   // \#4
-  /* A(A); */       // \#5, the copy deduction candidate
+  // \#5 is the copy deduction candidate, \tcode{A(A)}
 };
 
 A x(1, 2, 3);       // uses \#3, generated from a non-template constructor
