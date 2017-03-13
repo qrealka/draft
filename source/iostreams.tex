@@ -15072,8 +15072,8 @@ Otherwise,
       POSIX \tcode{S_ISFIFO}, returns \tcode{file_status(file_type::fifo, prms)}.
 \item Otherwise, if the attributes indicate a socket, as if by POSIX
       \tcode{S_ISSOCK}, returns \tcode{file_status(file_type::socket, prms)}.
-\item Otherwise, if the attributes indicate an
-      \impldef{file type of the file argument of \tcode{filesystem::status}} file type,
+\item Otherwise, if the attributes indicate an implementation-defined
+      file type~(\ref{enum.file_type}),
       returns \tcode{file_status(file_type::\placeholdernc{A}, prms)},
       where \tcode{\placeholdernc{A}} is the constant for the
       \impldef{file type of the file argument of \tcode{filesystem::status}} file type.
