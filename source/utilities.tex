@@ -8396,7 +8396,7 @@ then the signatures are:
 
 \begin{codeblock}
 unique_ptr(pointer p, A& d) noexcept;
-unique_ptr(pointer p, A&& d) noexcept;
+unique_ptr(pointer p, A&& d) = delete;
 \end{codeblock}
 
 \pnum
@@ -8405,7 +8405,7 @@ then the signatures are:
 
 \begin{codeblock}
 unique_ptr(pointer p, const A& d) noexcept;
-unique_ptr(pointer p, const A&& d) noexcept;
+unique_ptr(pointer p, const A&& d) = delete;
 \end{codeblock}
 
 \pnum
