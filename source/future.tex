@@ -2041,7 +2041,7 @@ if \tcode{T} is a literal type~(\ref{basic.types}), and
 \tcode{false_type} otherwise.
 The partial specialization \tcode{result_of<Fn(ArgTypes...)>} is a
 \tcode{TransformationTrait} whose member typedef \tcode{type} is defined
-if and only \tcode{invoke_result<Fn, ArgTypes...>::type} is defined.
+if and only if \tcode{invoke_result<Fn, ArgTypes...>::type} is defined.
 If \tcode{type} is defined, it names the same type as \tcode{invoke_result_t<Fn, ArgTypes...>}.
 
 \pnum

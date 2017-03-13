@@ -12911,8 +12911,8 @@ namespace std {
 
     // invocation
     template <class... ArgTypes>
-    invoke_result_t<T&, ArgTypes...>
-    operator() (ArgTypes&&...) const;
+      invoke_result_t<T&, ArgTypes...>
+      operator() (ArgTypes&&...) const;
   };
 
   template<class T>
@@ -15160,7 +15160,7 @@ namespace std {
   template <bool, class T, class F> struct conditional;
   template <class... T> struct common_type;
   template <class T> struct underlying_type;
-  template <class Fn, class... ArgTypes> class invoke_result;
+  template <class Fn, class... ArgTypes> struct invoke_result;
 
   template <size_t Len,
             size_t Align = @\textit{default-alignment}@> // see \ref{meta.trans.other}
