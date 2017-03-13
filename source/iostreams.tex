@@ -8416,15 +8416,14 @@ namespace std {
 
     // \ref{filebuf.members}, members
     bool is_open() const;
-    basic_filebuf<charT, traits>* open(const char* s,
-                                       ios_base::openmode mode);
-    basic_filebuf<charT, traits>* open(const filesystem::path::value_type* s,
-                                       ios_base::openmode mode);  // wide systems only; see \ref{fstream.syn}
-    basic_filebuf<charT, traits>* open(const string& s,
-                                       ios_base::openmode mode);
-    basic_filebuf<charT, traits>* open(const filesystem::path& s,
-                                       ios_base::openmode mode);
-    basic_filebuf<charT, traits>* close();
+    basic_filebuf* open(const char* s, ios_base::openmode mode);
+    basic_filebuf* open(const filesystem::path::value_type* s,
+                        ios_base::openmode mode);  // wide systems only; see \ref{fstream.syn}
+    basic_filebuf* open(const string& s,
+                        ios_base::openmode mode);
+    basic_filebuf* open(const filesystem::path& s,
+                        ios_base::openmode mode);
+    basic_filebuf* close();
 
   protected:
     // \ref{filebuf.virtuals}, overridden virtual functions
@@ -8633,10 +8632,9 @@ call to close.
 
 \indexlibrarymember{open}{basic_filebuf}%
 \begin{itemdecl}
-basic_filebuf<charT, traits>* open(const char* s,
-                                   ios_base::openmode mode);
-basic_filebuf<charT, traits>* open(const filesystem::path::value_type* s,
-                                   ios_base::openmode mode);  // wide systems only; see \ref{fstream.syn}
+basic_filebuf* open(const char* s, ios_base::openmode mode);
+basic_filebuf* open(const filesystem::path::value_type* s,
+                    ios_base::openmode mode);  // wide systems only; see \ref{fstream.syn}
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -8717,10 +8715,8 @@ if successful, a null pointer otherwise.
 
 \indexlibrarymember{open}{basic_filebuf}%
 \begin{itemdecl}
-basic_filebuf<charT, traits>* open(const string& s,
-                                   ios_base::openmode mode);
-basic_filebuf<charT, traits>* open(const filesystem::path& s,
-                                   ios_base::openmode mode);
+basic_filebuf* open(const string& s, ios_base::openmode mode);
+basic_filebuf* open(const filesystem::path& s, ios_base::openmode mode);
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -8731,7 +8727,7 @@ basic_filebuf<charT, traits>* open(const filesystem::path& s,
 
 \indexlibrarymember{close}{basic_filebuf}%
 \begin{itemdecl}
-basic_filebuf<charT, traits>* close();
+basic_filebuf* close();
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -9367,6 +9363,8 @@ bool is_open() const;
 \indexlibrarymember{open}{basic_ifstream}%
 \begin{itemdecl}
 void open(const char* s, ios_base::openmode mode = ios_base::in);
+void open(const filesystem::path::value_type* s,
+          ios_base::openmode mode = ios_base::in);  // wide systems only; see \ref{fstream.syn}
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -9385,6 +9383,7 @@ otherwise calls
 \indexlibrarymember{open}{basic_ifstream}%
 \begin{itemdecl}
 void open(const string& s, ios_base::openmode mode = ios_base::in);
+void open(const filesystem::path& s, ios_base::openmode mode = ios_base::in);
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -9431,6 +9430,8 @@ namespace std {
     explicit basic_ofstream(const filesystem::path::value_type* s,
                             ios_base::openmode mode = ios_base::out);  // wide systems only; see \ref{fstream.syn}
     explicit basic_ofstream(const string& s,
+                            ios_base::openmode mode = ios_base::out);
+    explicit basic_ofstream(const filesystem::path& s,
                             ios_base::openmode mode = ios_base::out);
     basic_ofstream(const basic_ofstream& rhs) = delete;
     basic_ofstream(basic_ofstream&& rhs);
@@ -9612,6 +9613,8 @@ bool is_open() const;
 \indexlibrarymember{open}{basic_ofstream}%
 \begin{itemdecl}
 void open(const char* s, ios_base::openmode mode = ios_base::out);
+void open(const filesystem::path::value_type* s,
+          ios_base::openmode mode = ios_base::out);  // wide systems only; see \ref{fstream.syn}
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -9646,6 +9649,7 @@ and, if that function fails (returns a null pointer), calls
 \indexlibrarymember{open}{basic_ofstream}%
 \begin{itemdecl}
 void open(const string& s, ios_base::openmode mode = ios_base::out);
+void open(const filesystem::path& s, ios_base::openmode mode = ios_base::out);
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -9876,6 +9880,9 @@ bool is_open() const;
 void open(
   const char* s,
   ios_base::openmode mode = ios_base::in | ios_base::out);
+void open(
+  const filesystem::path::value_type* s,
+  ios_base::openmode mode = ios_base::in | ios_base::out);  // wide systems only; see \ref{fstream.syn}
 \end{itemdecl}
 
 \begin{itemdescr}
@@ -9894,6 +9901,9 @@ otherwise calls
 \begin{itemdecl}
 void open(
   const string& s,
+  ios_base::openmode mode = ios_base::in | ios_base::out);
+void open(
+  const filesystem::path& s,
   ios_base::openmode mode = ios_base::in | ios_base::out);
 \end{itemdecl}
 
