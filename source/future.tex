@@ -2123,7 +2123,7 @@ bool unique() const noexcept;
 \pnum\returns \tcode{use_count() == 1}.
 \end{itemdescr}
 
-\rSec1[depr.locale.stdcvt]{Standard code conversion facets}
+\rSec1[depr.locale.stdcvt]{Deprecated standard code conversion facets}
 
 \pnum
 The header \tcode{<codecvt>} provides code conversion facets for various character encodings.
@@ -2131,6 +2131,9 @@ The header \tcode{<codecvt>} provides code conversion facets for various charact
 \rSec2[depr.codecvt.syn]{Header \tcode{<codecvt>} synopsis}
 
 \indexlibrary{\idxcode{codecvt}}%
+\indexlibrary{\idxcode{codecvt_utf8}}%
+\indexlibrary{\idxcode{codecvt_utf16}}%
+\indexlibrary{\idxcode{codecvt_utf8_utf16}}%
 \begin{codeblock}
 namespace std {
   enum codecvt_mode {
@@ -2230,7 +2233,7 @@ For the facet \tcode{codecvt_utf8_utf16}:
 
 \xref ISO/IEC 10646-1:1993.
 
-\rSec1[depr.conversions]{Deprecated character conversions}
+\rSec1[depr.conversions]{Deprecated convenience conversion interfaces}
 
 \pnum
 The header \tcode{<locale>} has the following additions:
