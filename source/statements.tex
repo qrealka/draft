@@ -196,8 +196,8 @@ Selection statements choose one of several flows of control.
 %
 \begin{bnf}
 \nontermdef{selection-statement}\br
-    \terminal{if constexpr\opt (} init-statement\opt condition \terminal{)} statement\br
-    \terminal{if constexpr\opt (} init-statement\opt condition \terminal{)} statement \terminal{else} statement\br
+    \terminal{if constexpr}\opt{} \terminal{(} init-statement\opt condition \terminal{)} statement\br
+    \terminal{if constexpr}\opt{} \terminal{(} init-statement\opt condition \terminal{)} statement \terminal{else} statement\br
     \terminal{switch (} init-statement\opt condition \terminal{)} statement
 \end{bnf}
 
@@ -295,7 +295,7 @@ int f() {
 An \tcode{if} statement of the form
 
 \begin{ncbnf}
-\terminal{if constexpr\opt (} init-statement condition \terminal{)} statement
+\terminal{if constexpr}\opt{} \terminal{(} init-statement condition \terminal{)} statement
 \end{ncbnf}
 
 is equivalent to
@@ -303,14 +303,14 @@ is equivalent to
 \begin{ncbnftab}
 \terminal{\{}\br
 \>init-statement\br
-\>\terminal{if constexpr\opt (} condition \terminal{)} statement\br
+\>\terminal{if constexpr}\opt{} \terminal{(} condition \terminal{)} statement\br
 \terminal{\}}
 \end{ncbnftab}
 
 and an \tcode{if} statement of the form
 
 \begin{ncbnf}
-\terminal{if constexpr\opt (} init-statement condition \terminal{)} statement \terminal{else} statement
+\terminal{if constexpr}\opt{} \terminal{(} init-statement condition \terminal{)} statement \terminal{else} statement
 \end{ncbnf}
 
 is equivalent to
@@ -318,7 +318,7 @@ is equivalent to
 \begin{ncbnftab}
 \terminal{\{}\br
 \>init-statement\br
-\>\terminal{if constexpr\opt (} condition \terminal{)} statement \terminal{else} statement\br
+\>\terminal{if constexpr}\opt{} \terminal{(} condition \terminal{)} statement \terminal{else} statement\br
 \terminal{\}}
 \end{ncbnftab}
 

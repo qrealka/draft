@@ -3040,7 +3040,7 @@ the program is ill-formed.
 \begin{bnf}
 \nontermdef{typename-specifier}\br
   \terminal{typename} nested-name-specifier identifier\br
-  \terminal{typename} nested-name-specifier \terminal{template\opt} simple-template-id
+  \terminal{typename} nested-name-specifier \terminal{template}\opt{} simple-template-id
 \end{bnf}
 
 \pnum
@@ -4062,8 +4062,8 @@ is dependent, even if any subexpression is type-dependent:
 
 \begin{ncbnftab}
 simple-type-specifier \terminal{(} expression-list\opt{} \terminal{)}\br
-\terminal{::\opt new} new-placement\opt new-type-id new-initializer\opt\br
-\terminal{::\opt new} new-placement\opt{} \terminal{(} type-id \terminal{)} new-initializer\opt\br
+\terminal{::}\opt{} \terminal{new} new-placement\opt new-type-id new-initializer\opt\br
+\terminal{::}\opt{} \terminal{new} new-placement\opt{} \terminal{(} type-id \terminal{)} new-initializer\opt\br
 \terminal{dynamic_cast <} type-id \terminal{> (} expression \terminal{)}\br
 \terminal{static_cast <} type-id \terminal{> (} expression \terminal{)}\br
 \terminal{const_cast <} type-id \terminal{> (} expression \terminal{)}\br
@@ -4085,8 +4085,8 @@ postfix-expression \terminal{->} pseudo-destructor-name\br
 \terminal{alignof (} type-id \terminal{)}\br
 \terminal{typeid (} expression \terminal{)}\br
 \terminal{typeid (} type-id \terminal{)}\br
-\terminal{::\opt delete} cast-expression\br
-\terminal{::\opt delete [ ]} cast-expression\br
+\terminal{::}\opt{} \terminal{delete} cast-expression\br
+\terminal{::}\opt{} \terminal{delete [ ]} cast-expression\br
 \terminal{throw} assignment-expression\opt\br
 \terminal{noexcept} \terminal{(} expression \terminal{)}
 \end{ncbnftab}
@@ -4880,7 +4880,7 @@ The syntax for explicit instantiation is:
 
 \begin{bnf}
 \nontermdef{explicit-instantiation}\br
-  \terminal{extern\opt} \terminal{template} declaration
+  \terminal{extern}\opt{} \terminal{template} declaration
 \end{bnf}
 
 There are two forms of explicit instantiation: an explicit instantiation

@@ -1477,10 +1477,10 @@ forms:
 
 \begin{ncsimplebnf}
 class-key attribute-specifier-seq\opt identifier \terminal{;}\br
-\terminal{friend} class-key \terminal{::\opt} identifier \terminal{;}\br
-\terminal{friend} class-key \terminal{::\opt} simple-template-id \terminal{;}\br
+\terminal{friend} class-key \terminal{::}\opt{} identifier \terminal{;}\br
+\terminal{friend} class-key \terminal{::}\opt{} simple-template-id \terminal{;}\br
 \terminal{friend} class-key nested-name-specifier identifier \terminal{;}\br
-\terminal{friend} class-key nested-name-specifier \terminal{template\opt} simple-template-id \terminal{;}
+\terminal{friend} class-key nested-name-specifier \terminal{template}\opt{} simple-template-id \terminal{;}
 \end{ncsimplebnf}
 
 In the first case, the \grammarterm{attribute-specifier-seq}, if any, appertains
@@ -2270,12 +2270,12 @@ see~\ref{basic.scope.namespace}.
 
 \begin{bnf}
 \nontermdef{named-namespace-definition}\br
-        \terminal{inline\opt} \terminal{namespace} attribute-specifier-seq\opt identifier \terminal{\{} namespace-body \terminal{\}}
+        \terminal{inline}\opt{} \terminal{namespace} attribute-specifier-seq\opt identifier \terminal{\{} namespace-body \terminal{\}}
 \end{bnf}
 
 \begin{bnf}
 \nontermdef{unnamed-namespace-definition}\br
-        \terminal{inline\opt} \terminal{namespace} attribute-specifier-seq\opt{} \terminal{\{} namespace-body \terminal{\}}
+        \terminal{inline}\opt{} \terminal{namespace} attribute-specifier-seq\opt{} \terminal{\{} namespace-body \terminal{\}}
 \end{bnf}
 
 \begin{bnf}
@@ -2648,7 +2648,7 @@ namespace CWVLN = CWVLN;
 
 \begin{bnf}
 \nontermdef{using-declarator}\br
-    \terminal{typename\opt} nested-name-specifier unqualified-id
+    \terminal{typename}\opt{} nested-name-specifier unqualified-id
 \end{bnf}
 
 \pnum
